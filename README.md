@@ -29,8 +29,8 @@
 
     gem install rails
     rails new admin_app --database=postgresql
-# Database credentials add to the deployment.yml 
-# vim config/deployment.yml
+# Database credentials add to the database.yml
+# vim config/database.yml
  
     development:
     adapter: postgresql
@@ -54,7 +54,7 @@
 
 
 # Database initialization
-# insert the database credentials into the config/deployment.yml
+# insert the database credentials into the database.yml
 # restart the postgres service to effect the db crendentials 
     service postgresql restart
     rake db:setup
