@@ -1,16 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-   # Ruby Version for sample ruby project
-ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
+# Ruby version
+# Ruby Version for sample ruby project
+    ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
 
 
-* System dependencies
+# System dependencies
 # The following system requirement need to install and setup the node 
     gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     curl -sSL https://get.rvm.io | bash -s stable
@@ -23,7 +19,7 @@ ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
     sudo apt install postgresql
 
 
-* Configuration
+# Configuration
 # Create an database user 
     sudo su - postgres
     psql
@@ -35,34 +31,32 @@ ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
     rails new admin_app --database=postgresql
 # Database credentials add to the deployment.yml 
 # vim config/deployment.yml
-<<< 
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_development
-  pool: 5
-  username: myapp
-  password: password1
+ 
+    development:
+    adapter: postgresql
+    encoding: unicode
+    database: myapp_development
+    pool: 5
+    username: myapp
+    password: password1
 
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
-  username: myapp
-  password: password1
-  >>> 
+    test:
+    adapter: postgresql
+    encoding: unicode
+    database: myapp_test
+    pool: 5
+    username: myapp
+    password: password1
 
-* Database creation
+
+# Database creation
     rake db:create
 
 
-* Database initialization
+# Database initialization
 # insert the database credentials into the config/deployment.yml
 # restart the postgres service to effect the db crendentials 
-service postgresql restart
-
-and then run 
+    service postgresql restart
     rake db:setup
     rake db:create
 # Run the ruby sample app using the following command 
@@ -70,10 +64,6 @@ and then run
     rails generate controller welcome index
     rake db:migrate
 
-* How to run the test suite
+# How to run the test suite
     rails server --binding=0.0.0.0 --environment=development
 
-* Deployment instructions
-
-* ...
-  
