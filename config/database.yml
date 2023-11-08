@@ -1,15 +1,11 @@
+---
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_development
-  pool: 5
-  username: admin
-  password: "Admin@123$%"
-
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
-  username: admin
-  password: "Admin@123$%"
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_test?') %>
+
+staging:
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_staging?') %>
+
+production:
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>``

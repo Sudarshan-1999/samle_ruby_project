@@ -1,0 +1,3 @@
+
+SECRET_TOKEN=46af077dde569c266dbf02eb0818fb1d78417e64d68e3c378c3e2b6f5635bb0663dd5196e0a54fdf77448c701c27ff4da467f270c44a6f140e746b5d0deb9e78
+DATABASE_URL=postgresql://admin:Admin%40123%24%25@postgres:5432/drkiq?encoding=utf8&pool=5&timeout=5000
