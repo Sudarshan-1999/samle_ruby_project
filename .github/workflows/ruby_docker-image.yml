@@ -20,6 +20,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag sumosd/ruby_rails:$(date +%s)
+      run: docker build . --file Dockerfile --tag sumosd/ruby_rails:1
     - name: Docker Push
-      run: docker push sumosd/ruby_rails
+      run: docker push sumosd/ruby_rails:1
