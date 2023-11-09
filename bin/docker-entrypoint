@@ -1,9 +1,21 @@
 #!/bin/bash -e
 
 # If running the rails server then create or migrate existing database
-if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:prepare
-fi
+#if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+#  ./bin/rails db:prepare
+#fi
+#export DEV_DATABASE_NAME=myapp_development
+#export TEST_DATABASE_NAME=myapp_test
+#export PROD_DATABASE=myapp_production
+#export DB_HOST=pgsql-app
+#export DB_PORT=5432
+#export DB_USERNAME=postgres
+#export DB_PASSWORD="Admin@123$%"
 
+cp nginx_conf/app.conf /etc/nginx/sites-enabled/app
+service nginx restart
+./bin/rails db:setup
+./bin/rails db:migrate
+./bin/rails server -b 0.0.0.0 -p 3001
 
 exec "${@}"
