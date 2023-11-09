@@ -1,11 +1,29 @@
----
 development:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DEV_DATABASE_NAME'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
 test:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_test?') %>
-
-staging:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_staging?') %>
-
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['TEST_DATABASE_NAME'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 production:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>``
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['PROD_DATABASE_NAME'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
